@@ -1,0 +1,96 @@
+:root{
+    --black-color-1: #000000;
+    --black-color-2: #1e1e1e;
+    --black-color-3: #1B1B1B;
+    --dark-green-color-1: #006312;
+    --dark-green-color-2: #008001;
+    --light-green-color-1: #009200;
+    --light-green-color-2: #49B618;
+}
+
+body, html{
+    margin: 0;
+    height: 100%;
+}
+
+body{
+    overflow-x: hidden;
+    background-color: var(--black-color-3);
+}
+
+.navbar{
+
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: var(--black-color-1);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 20px;
+    position: relative;
+}
+.navbar::before{
+    --border-width: 5px;
+    content: '';
+    position: absolute;
+    bottom:  calc(var(--border-width) * -1);
+    left: 0;
+    width: 100%;
+    height: var(--border-width);
+    background-image: linear-gradient(90deg, var(--dark-green-color-1), var(--light-green-color-2), hsl(120, 100%, 45%));
+}
+
+.logo-container{
+    display: flex;
+    color: white;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar-logo{
+    width: 50px;
+    height: 50px;
+    filter: invert(1);
+}
+
+
+.nav-buttons{
+    display: flex;
+    width: 40%;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.nav-button{
+    max-width: 160px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    flex-grow: 1;
+    color: white;
+    cursor: pointer;
+    transition: background-color 250ms ease-in-out, transform 100ms ease-out;
+    font-family: "Quicksand", sans-serif;
+    font-size: 1.3rem;
+}
+
+.login-button{
+    background-color: var(--light-green-color-1);
+    color: white;
+}
+
+.login-button:hover{
+    background-color: var(--light-green-color-2);
+    transform: scale(1.05);
+    color: white;
+}
+
+.nav-button:not(.login-button){
+    background-color: transparent;
+}
+
+.nav-button:not(.login-button):hover{
+    background-color: var(--black-color-2);
+}
